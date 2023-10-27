@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para o campo de arquivo */
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        .custom-file-input::before {
+            content: 'Escolher Arquivo';
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            outline: none;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Supload</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Envio de Documentos</h1>
+    </div>
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <div class="col-md-10 mx-auto col-lg-5">
+                <div class="p-4 p-md-5 border rounded-3 bg-ligth">
+                    <h3 class="text-center">Formulário</h3>
+                    <h5>Identidade:</h5>
+                    <form action="/send" method="POST" enctype="multipart/form-data">
+                        <div class="input-group mb-3">
+                            <input class="form-control form-control-sm custom-file-input" id="arquivoU" name="arquivoU"
+                                type="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button> <!-- Botão de envio -->
+                    </form>
+                    <div class="form-floating mb-3">
+                    </div>
+                    <div class="container text-center">
+                        <!-- Botão de Download -->
+                        <a class="btn btn-success" href="/ver/1">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
